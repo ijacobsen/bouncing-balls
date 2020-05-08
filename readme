@@ -1,0 +1,29 @@
+This package contains four directories. Each directory contains all of the necessary files to run the respective scripts.
+
+20000_c_gen: coarse wavelet subband using only the convolutional LSTM
+
+20000_d_gen: detail wavelet subband using only the convolutional LSTM
+
+20000_gen: data domain using only the convolutional LSTM
+
+20000_gan: data domain using adversarial training
+
+
+Each directory contains a trained model which can be loaded in to create videos. To load the trained model:
+	- using only convolutional LSTM: change the mode flag in 'main.py' to 'test'.
+	- using the adversarial network: change the mode flag in 'main_gan.py' to 'gen_video'.
+
+To train a new model:
+	- using only convolutional LSTM: chang the mode flag in 'main.py' to 'train'.
+	- using the adversarial network: change the mode flag in 'main_gan.py' to 'adv_train'.
+
+
+*** NOTE: following files were used from https://github.com/loliverhennigh/Convolutional-LSTM-in-Tensorflow:
+	- bouncing_balls.py
+	- layer_def.py
+	- BasicConvLSTMCell.py
+
+bouncing_balls.py is what is used to create the dataset, and the layer_def.py and BasicConvLSTMCell.py is used as a building block for the convolutional LSTM.
+
+All other files were written by Ian Jacobsen.
+
